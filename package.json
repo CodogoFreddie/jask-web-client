@@ -1,0 +1,23 @@
+{
+  "name": "pwa",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "codogo-react-scripts": "1.0.14-delta.84"
+  },
+  "dependencies": {
+    "jask-core": "^0.1.1",
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "styled-components": "^2.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
