@@ -6,6 +6,7 @@
     "codogo-react-scripts": "1.0.14-delta.84"
   },
   "dependencies": {
+    "autobind-decorator": "^2.1.0",
     "jask-core": "^0.1.1",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
