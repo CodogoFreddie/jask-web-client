@@ -1,55 +1,25 @@
 import autobind from 'autobind-decorator';
 
-import {
-	Input,
-	Modal,
-} from "./components/toolbox";
+import ServerDetails from "./components/serverDetails";
+import Shell from "./components/shell";
 
 export default class Root extends React.Component {
-	constructor(props){
-		super(props);
-
-	}
-
 	@autobind
 	hasServerInfo(){
-		return localStorage.serverAddress && localStorage.serverKey;
-	}
-
-	@autobind
-	onAddressChange({ target: { value, } }){
-		localStorage.serverAddress = value;
-	}
-
-	@autobind
-	onServerKeyChange({ target: { value, } }){
-		localStorage.serverKey = value;
-	}
-
-	@autobind
-	renderServerInfo(){
-		return (
-			<Modal>
-				address: <Input
-					type = "text"
-					value = { localStorage.serverAddress }
-					onChange = { this.onAddressChange } 
-				/>
-				key: <Input
-					type = "text"
-					value = { localStorage.serverKey }
-					onChange = { this.onServerKeyChange }
-				/>
-			</Modal>
+		console.log(
+			localStorage.serverPort,
+			localStorage.serverAddress,
+			localStorage.serverKey
 		);
+		return localStorage.serverPort && localStorage.serverAddress && localStorage.serverKey;
 	}
 
 	render(){
-		console.log(this.state);
+		console.log(this.hasServerInfo());
 		return (
 			this.hasServerInfo()
-			? <div />
-			: this.renderServerInfo()
+			? <Shell/>
+			: <ServerDetails onSubmit = { () => this.forceUpdate() } />
 		);
 	}
 };

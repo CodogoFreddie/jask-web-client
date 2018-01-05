@@ -33,3 +33,7 @@ export const Modal = styled.div`
 	justify-content: center;
 	margin: 2rem;
 `;
+
+export const Button = styled.button`
+
+`;
